@@ -1,0 +1,18 @@
+version: '3.8'  # Versão do Docker Compose
+
+services:
+  postgres:
+    image: postgres:15  
+    container_name: postgres_db  
+    environment:
+      POSTGRES_USER: postgres         
+      POSTGRES_PASSWORD: postgres 
+      POSTGRES_DB: postgres       
+    ports:
+      - "3003:5432"  # Mapeia a porta 5432 do contêiner para a porta 5432 do host
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  
+
+volumes:
+  postgres_data:
+    driver: local 
