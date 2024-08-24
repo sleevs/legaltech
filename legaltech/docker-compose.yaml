@@ -1,4 +1,4 @@
-version: '3.8'  # Versão do Docker Compose
+version: '3.8'
 
 services:
   postgres:
@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: postgres 
       POSTGRES_DB: postgres       
     ports:
-      - "3003:5432"  # Mapeia a porta 5432 do contêiner para a porta 5432 do host
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data  
 
